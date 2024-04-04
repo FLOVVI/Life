@@ -17,6 +17,7 @@ function buttonClick(elem) {
 
     if (money > 0) {
         tg.MainButton.show()
+    }
 };
 
 Telegram.WebApp.onEvent('mainButtonClicked', function(){
