@@ -14,10 +14,6 @@ tg.isClosingConfirmationEnabled = true;
 function buttonClick(elem) {
     money++
     elem.value = `Заработано: ${money}`
-
-    if (money > 0) {
-        tg.MainButton.show()
-    }
 };
 
 Telegram.WebApp.onEvent('mainButtonClicked', function(){
