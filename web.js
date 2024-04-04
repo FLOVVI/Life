@@ -1,7 +1,6 @@
 let tg = window.Telegram.WebApp; //получаем объект webapp телеграма 
 
 let money = 0
-let btnclick = false
 
 tg.expand(); //расширяем на все окно  
 
@@ -10,13 +9,17 @@ tg.MainButton.setText("Закончить работу"); //изменяем т�
 tg.MainButton.textColor = "#F55353"; //изменяем цвет текста кнопки
 tg.MainButton.color = "#143F6B"; //изменяем цвет бэкграунда кнопки
 tg.MainButton.setParams({"color": "#143F6B"}); //так изменяются все параметры 
-
+tg.isClosingConfirmationEnabled = true;
 
 function buttonClick(elem) {
     money++
     elem.value = `Заработано: ${money}`
-}
+
+    if (money > 0) {
+        tg.MainButton.show()
+};
 
 Telegram.WebApp.onEvent('mainButtonClicked', function(){
-	tg.sendData(money); 
+	tg.sendData(`${money}`); 
+	//при клике на основную кнопку отправляем данные в строковом виде
 });
