@@ -10,7 +10,7 @@ tg.MainButton.setText("Закончить работу"); //изменяем т�
 tg.MainButton.textColor = "#F55353"; //изменяем цвет текста кнопки
 tg.MainButton.color = "#143F6B"; //изменяем цвет бэкграунда кнопки
 tg.MainButton.setParams({"color": "#143F6B"}); //так изменяются все параметры 
-tg.isClosingConfirmationEnabled = true;
+tg.MainButton.show()
 
 function buttonClick(elem) {
     money++
