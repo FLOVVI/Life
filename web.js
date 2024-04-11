@@ -13,7 +13,7 @@ tg.MainButton.show()
 
 function buttonClick(elem) {
     money++
-    elem.value = `Заработано: ${money}`
+    elem.value = `Заработано: ${money}$`
 };
 
 Telegram.WebApp.onEvent('mainButtonClicked', function(){
